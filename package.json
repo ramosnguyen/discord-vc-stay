@@ -1,0 +1,29 @@
+{
+  "name": "discord-vc-stay",
+  "version": "1.0.0",
+  "description": "Keep a Discord user account connected to a target voice channel 24/7 (selfbot).",
+  "main": "dist/index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "bun run tsc -p tsconfig.json",
+    "dev": "bun run src/cli.ts",
+    "start": "bun run src/cli.ts",
+    "typecheck": "bun run tsc -p tsconfig.json --noEmit",
+    "format": "prettier --check --write --log-level=warn \"{src,tests}/**/*.{js,ts,json}\""
+  },
+  "dependencies": {
+    "@discordjs/voice": "^0.19.0",
+    "@snazzah/davey": "^0.1.9",
+    "colorette": "^2.0.20",
+    "debug": "^4.4.3",
+    "discord.js-selfbot-v13": "^3.7.1"
+  },
+  "devDependencies": {
+    "@sapphire/prettier-config": "^2.0.0",
+    "@types/bun": "^1.3.9",
+    "@types/node": "^24.0.0",
+    "prettier": "^3.8.1",
+    "tsx": "^4.20.0",
+    "typescript": "^5.8.3"
+  }
+}

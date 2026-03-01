@@ -1,0 +1,10 @@
+services:
+  discord-vc-stay:
+    image: ghcr.io/ramos350/discord-vc-stay:latest
+    restart: unless-stopped
+    environment:
+      DISCORD_TOKEN: ${DISCORD_TOKEN}
+      DISCORD_GUILD_ID: ${DISCORD_GUILD_ID}
+      DISCORD_CHANNEL_ID: ${DISCORD_CHANNEL_ID}
+      LOG_LEVEL: ${LOG_LEVEL:-info}
+
