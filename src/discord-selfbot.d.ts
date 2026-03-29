@@ -15,10 +15,28 @@ declare module 'discord.js-selfbot-v13' {
 		readonly id: string;
 		readonly voiceAdapterCreator: unknown;
 		readonly channels: GuildChannelManager;
+		readonly members: GuildMemberManager;
 	}
 
 	interface GuildChannelManager {
 		fetch(id: string): Promise<GuildBasedChannel | null>;
+	}
+
+	interface BaseFetchOptions {
+		cache?: boolean;
+		force?: boolean;
+	}
+
+	interface GuildMemberVoiceState {
+		readonly channelId: string | null;
+	}
+
+	interface GuildMember {
+		readonly voice: GuildMemberVoiceState;
+	}
+
+	interface GuildMemberManager {
+		fetchMe(options?: BaseFetchOptions): Promise<GuildMember>;
 	}
 
 	interface GuildBasedChannel {
@@ -73,6 +91,9 @@ declare module 'discord.js-selfbot-v13' {
 		Guild,
 		GuildBasedChannel,
 		GuildChannelManager,
+		GuildMember,
+		GuildMemberManager,
+		GuildMemberVoiceState,
 		GuildManager,
 		VoiceState,
 		CloseEvent
